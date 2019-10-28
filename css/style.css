@@ -1,0 +1,14 @@
+body {
+  font-family: "Noto Sans KR", sans-serif; }
+
+body, html {
+  font-size: 62.5%;
+  color: #2f3542;
+  line-height: 1.5; }
+
+a {
+  text-decoration: none;
+  color: #2f3542; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.7; }
