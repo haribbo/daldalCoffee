@@ -8,6 +8,16 @@
   justify-content: center;
   flex-direction: $direction;
 }
+@mixin icon_conts($icon_bg:#333){
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background:$icon_bg;
+  color:#fff;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
 @function colors($color_name) {
   @return map-get($colors,$color_name);
 }
@@ -221,7 +231,9 @@
 
     a {
       display: inline-block;
-      background: #e9e9e9;
+      font-size: 1.6rem;
+      background: none;
+      border: 1px solid #eaeaea;
       padding: 0.8rem 2.2rem;
       border-radius: 2.3rem;
       transition: background 0.3s;
@@ -234,7 +246,7 @@
 }
 
 .sub_page_showcase {
-  height: 350px;
+  height: 35vh;
   background: colors(img_placeholder);
   display: flex;
   flex-direction: column;
@@ -281,36 +293,98 @@
   }
 }
 
-
 .notice_list {
   &_row {
     display: flex;
-    padding:  1.5rem 0;
+    padding: 1.5rem 0;
     border-bottom: 1px solid #eee;
 
     span {
       display: inline-block;
-      flex:2;
+      flex: 2;
       text-align: center;
       font-weight: 300;
       font-size: 1.6rem;
     }
+
     span.num {
-      flex:1;
+      flex: 1;
     }
+
     span.tit {
-      margin:0  0.8rem;
+      margin: 0 0.8rem;
       flex: 8;
       text-align: left;
       font-weight: 400;
       font-size: 1.8rem;
     }
   }
+
   &_headings {
-    background:#f4f4f4;
+    background: #f4f4f4;
     border-bottom: 1px solid #e8e8e8;
+
     span {
       display: inline-block;
     }
   }
+}
+
+.card_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &_item {
+    width: 31%;
+    padding: 4.5rem 2.5rem;
+    border: 1px solid #eaeaea;
+    margin-bottom: 2.25rem;
+
+    .desc {
+      display: block;
+      margin-bottom: 1rem;
+
+      i {
+        margin: 0 0.7rem;
+        width: 20px;
+        height: 20px;
+        background: #333;
+        display: inline-block;
+        border-radius: 100%;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+        font-size: 1.2rem;
+      }
+
+      span.naeme {
+        font-size: 1.6rem;
+      }
+    }
+
+    .talk {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: 0.8rem;
+      margin-bottom: 1.8rem;
+
+      &:after,
+      &:before {
+        content: '"';
+      }
+    }
+
+    .img {
+      width: 100%;
+      height: 200px;
+      background: colors(img_placeholder);
+    }
+  }
+}
+
+@mixin nav_event() {
+  @media(min-width:769px) {
+      @content;
+    }
 }

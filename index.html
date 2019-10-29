@@ -8,11 +8,14 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family= Bree + Serif & display = swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="js/main.js" charset="utf-8"></script>
 </head>
 
 <body>
+  <!-- header -->
   <header class="header">
     <div class="header_infos">
       <div class="item logo">
@@ -22,16 +25,20 @@
       <div class="item">
         <i class="icon xi-home xi-2x home"></i>
         <div class="item_content">
-          <span class="item_tit">매장위치</span>
-          <!-- <span class="item_desc">서울특별시 강남구 논현동 33-10</span> -->
-          <span class="item_desc">가까운매장 알아보기</span>
+          <a href="store_list.html">
+            <span class="item_tit">매장위치</span>
+            <!-- <span class="item_desc">서울특별시 강남구 논현동 33-10</span> -->
+            <span class="item_desc">가까운매장 알아보기</span>
         </div>
+        </a>
       </div>
       <div class="item">
         <i class="icon xi-call xi-2x"></i>
         <div class="item_content">
-          <span class="item_tit">가맹문의</span>
-          <span class="item_desc">기본견적 알아보기</span>
+          <a href="contact.html">
+            <span class="item_tit">가맹문의</span>
+            <span class="item_desc">기본견적 알아보기</span>
+          </a>
         </div>
       </div>
       <div class="item">
@@ -42,16 +49,25 @@
         </div>
       </div>
     </div>
+    <div class="line_menu">
+      <a href="">클릭</a>
+    </div>
     <nav class="header_nav">
-      <ul>
-        <li class="active"><a href="/">홈</a></li>
+      <ul class="">
         <li><a href="about.html">달달커피</a></li>
-        <li><a href="menus.html">신상품/메뉴</a></li>
-        <li><a href="notice.html">공지사항</a></li>
-        <li><a href="contact.html">문의하기</a></li>
+        <li><a href="menus.html">달달메뉴</a></li>
+        <li><a href="store_list.html">매장안내</a></li>
+        <li><a href="#">커뮤니티</a>
+          <ul>
+            <li><a href="event.html">이벤트/새소식</a></li>
+            <li><a href="notice.html">공지사항</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">가맹문의</a></li>
       </ul>
     </nav>
   </header>
+  <!-- header ends -->
   <main id="index_page">
     <div class="main_slider">
       <div class="main_slider_content">
@@ -69,14 +85,14 @@
     </div>
     <!-- about us -->
     <section class="main_intro">
-        <img src="images/section2.jpg" class="left" alt="">
+      <img src="images/section2.jpg" class="left" alt="">
       <div class="right">
         <div class="right_content">
           <span>달달커피이야기</span>
           <h2>작은 곳에서 시작한 달달커피</h2>
           <p>모든 국민은 근로의 권리를 가진다.적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.</p>
           <br>
-           <p>서한으로 의견을 표시할 수 있다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.</p>
+          <p>서한으로 의견을 표시할 수 있다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.</p>
         </div>
         <button class="primary_btn">알아보기</button>
       </div>
@@ -239,7 +255,7 @@
         <h2>달달커피 응암점</h2>
         <p>서울특별시 은평구 응암동 90-14번지 1층 4호</p>
         <p> 02-6408-6603</p>
-          <a href="" class="primary_btn small">알아보기</a>
+        <a href="" class="primary_btn small">알아보기</a>
       </div>
       <a href="" class="more_link">게시판으로 가기</a>
     </section>

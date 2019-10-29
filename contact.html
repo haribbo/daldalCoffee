@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family= Bree + Serif & display = swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_infos">
+      <div class="item logo">
+        <h1 class="">달달커피</h1>
+        <p>DALDALCOFFEE</p>
+      </div>
+      <div class="item">
+        <i class="icon xi-home xi-2x home"></i>
+        <div class="item_content">
+          <span class="item_tit">매장위치</span>
+          <!-- <span class="item_desc">서울특별시 강남구 논현동 33-10</span> -->
+          <span class="item_desc">가까운매장 알아보기</span>
+        </div>
+      </div>
+      <div class="item">
+        <i class="icon xi-call xi-2x"></i>
+        <div class="item_content">
+          <span class="item_tit">가맹문의</span>
+          <span class="item_desc">기본견적 알아보기</span>
+        </div>
+      </div>
+      <div class="item">
+        <i class="icon xi-mail xi-2x"></i>
+        <div class="item_content">
+          <span class="item_tit">담당자문의</span>
+          <span class="item_desc">admin_dal@gamil.com</span>
+        </div>
+      </div>
+    </div>
+    <nav class="header_nav">
+      <ul>
+        <li class="active"><a href="/">홈</a></li>
+        <li><a href="about.html">달달커피</a></li>
+        <li><a href="menus.html">신상품/메뉴</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="contact.html">문의하기</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- intro -->
+  <main id="contact">
+    <section class="sub_page_showcase">
+      <p>공지사항 및 새소식을 알아보세요</p>
+      <div class="root">
+        <span>home</span><span>notice</span>
+      </div>
+    </section>
+    <!-- contact form -->
+    <section class="contact">
+      <form action="">
+        <div class="headings">
+          <p>가맹문의, 개선사항 등 자유롭게 물어봐주세요</p>
+          <h2 class="center_line">가맹문의</h2>
+        </div>
+        <div class="input_row">
+          <div class="input_col">
+            <label for="name">성함</label>
+            <input type="text">
+          </div>
+          <div class="input_col">
+            <label for="call">연락처</label>
+            <input type="text">
+          </div>
+        </div>
+        <div class="input_row">
+          <div class="input_col">
+            <label for="">예상가맹지역</label>
+            <select name="area" id="">
+              <option value="">서울특별시</option>
+              <option value="">고양시</option>
+              <option value="">부천시</option>
+              <option value="">광주광역시</option>
+            </select>
+          </div>
+          <div class="input_col">
+            <label for="money">예상자금</label>
+            <select class="money" name="money">
+              <option value="#">1000만원~2000만원</option>
+              <option value="#">2000만원~3000만원</option>
+              <optino value="#">미정</optino>
+            </select>
+          </div>
+        </div>
+        <div class="input_row">
+          <div class="input_col textarea_col">
+            <label for="">문의내용</label>
+            <textarea name="name" rows="8" cols="80"></textarea>
+          </div>
+        </div>
+        <div class="input_row btn_row">
+          <button class="primary_btn">문의</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

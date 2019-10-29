@@ -55,6 +55,10 @@ h6 {
   line-height: 1.7;
 }
 
+.line_menu {
+  display: none;
+}
+
 .header {
   &_infos {
     @include innerAuto;
@@ -118,23 +122,86 @@ h6 {
   }
 }
 
+
 .header_nav {
   background: colors(primary);
 
+  &.stiky {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    transition: all .3s;
+    box-shadow: 0 2px 2px rgba(0,0,0,.25);
+    ul li {
+      padding: 1.4rem 0 1.2rem;
+      a {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &.stiky.view {
+    position: absolute;
+  }
+
   ul {
     @include innerAuto;
-    padding: 0 15%;
+    padding: 0 5%;
     display: flex;
+    flex-wrap: wrap;
 
     li {
       width: 20%;
       padding: 2rem 0 1.2rem;
       margin-bottom: 0.8rem;
       text-align: center;
+      position: relative;
 
       &.active {
         a {
           border-bottom: 2px solid #fff;
+        }
+      }
+
+      ul {
+        position: absolute;
+        bottom: -0.8rem;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        // border: 1px solid rgba(255,255,255,0.05);
+        height: 0;
+        visibility: hidden;
+
+        transition: transform 0.3s;
+
+        li {
+          position: relative;
+          width: 100%;
+          margin: 0;
+          line-height: 1;
+          position: relative;
+          background: colors(primary);
+          z-index: 10;
+
+          &:before {}
+
+          a {
+            font-size: 1.6rem;
+            position: relative;
+            z-index: 3;
+          }
+        }
+      }
+
+      &:hover ul {
+        @include nav_event {
+          visibility: visible;
+          opacity: 1;
+          transform: translate3d(0,100%,0);
+          height: 100%;
         }
       }
     }
@@ -372,12 +439,185 @@ footer {
     text-align: center;
     @include headings;
   }
+
   .cate_list {
     margin: 0;
-    li a {
-      font-size: 1.6rem;
-      background: none;
-      border:1px solid #eaeaea;
+  }
+}
+
+.contact {
+  padding: 8.8rem 0;
+  @include innerAuto;
+
+  .headings {
+    @include headings;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .input {
+    &_row {
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &.btn_row {
+        justify-content: center;
+      }
+    }
+
+    &_col {
+      width: 48%;
+
+      &.textarea_col {
+        width: 100%;
+      }
+
+      * {
+        outline: none;
+        border: none;
+      }
+
+      input,
+      select,
+      textarea {
+        border-bottom: 2px solid #eaeaea;
+      }
+
+      label {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        height: 4rem;
+        padding: 1rem 1.5rem;
+      }
+
+      textarea {
+        display: block;
+        width: 100%;
+        resize: none;
+        background: #fafafa;
+      }
     }
   }
 }
+
+.main_notice.stores {
+  max-width: 100%;
+  background: #f4f4f4;
+
+  .store_list {
+    @include innerAuto;
+
+    &_item {
+      padding: 3.5rem 2.5rem;
+      background: #fff;
+      display: flex;
+      margin-bottom: 1.75rem;
+
+      .right {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.store_review {
+  @include innerAuto;
+  padding: 8.8rem 0;
+}
+
+.store_list_detail {
+  background: #f4f4f4;
+}
+
+.list_detail {
+  @include innerAuto;
+  background: #fff;
+
+  &_content {
+    padding: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .sns {
+      align-self: flex-end;
+      margin-bottom: 4.4rem;
+
+      i {
+        @include icon_conts;
+      }
+    }
+
+    .tit {
+      line-height: 2;
+      border-bottom: 3px solid #eee;
+      font-size: 2.2rem;
+      color: #333;
+      font-size: 500;
+      margin-top: 3rem;
+
+      &.map_tit {
+        margin-top: 3rem;
+      }
+    }
+
+    .map_img,
+    .store_img {
+      text-align: center;
+      vertical-align: middle;
+      height: 300px;
+
+      img {
+        height: 100%;
+        width: 300px;
+        display: inline-block;
+        background: colors(img_placeholder);
+      }
+    }
+
+    .map_img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .store_infos {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 2rem 0;
+
+    &_item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border: none;
+      }
+
+      i {
+        @include icon_conts;
+        margin: 0 0.8rem;
+      }
+
+      .sub_tit {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  .primary_btn {
+    display: inline-block;
+    align-self: center;
+  }
+}
+// 미디어쿼리
+@import 'media';
