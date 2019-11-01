@@ -1,0 +1,5 @@
+#index_page .heading h2[data-scroll="in"] {
+  opacity: 0; }
+
+#index_page .heading h2[data-scroll="out"] {
+  opacity: 1; }

@@ -9,9 +9,45 @@
   <link href="https://fonts.googleapis.com/css?family= Bree + Serif & display = swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" charset="utf-8"></script>
+  <!-- <script src="js/swiper.js" charset="utf-8"></script> -->
+  <script src="js/scroll-out.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <!-- <link rel="stylesheet" href="css/swiper.min.css"> -->
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
   <script src="js/main.js" charset="utf-8"></script>
+
+  <!-- slider css  -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+  <!-- slider css -->
 </head>
 
 <body>
@@ -69,63 +105,127 @@
   </header>
   <!-- header ends -->
   <main id="index_page">
-    <div class="main_slider">
-      <div class="main_slider_content">
-        <div class="lines">
-          <hr>
-          <span>HOT</span>
-          <hr>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="main_slider_content ">
+            <div class="main_slider_content_inner">
+              <div class="lines">
+                <hr>
+                <span>HOT</span>
+                <hr>
+              </div>
+              <h2>달달커피 계절메뉴</h2>
+              <p>코스타리카 원두의 깊은 향을 듬뿍 머금은 달달커피의 메뉴들을 만나보세요.<br>
+              <button class="primary_btn">알아보기</button>
+            </div>
+          </div>
         </div>
-        <h2>달달커피 인기메뉴</h2>
-        <p>코스타리카 원두의 깊은 향을 듬뿍 머금은 달달커피의 메뉴들을 만나보세요.<br>
-          쌀쌀해진 날씨, 따듯한 아메리카노가 떠오르 날, 달달의 아메키라노를 잊지 말아주세요
-        </p>
-        <button class="primary_btn">알아보기</button>
+        <div class="swiper-slide">
+          <div class="main_slider_content ">
+            <div class="main_slider_content_inner" >
+              <div class="lines">
+                <hr>
+                <span>HOT</span>
+                <hr>
+              </div>
+              <h2>달달커피 추천 / 인기 메뉴</h2>
+              <p>코스타리카 원두의 깊은 향을 듬뿍 머금은 달달커피의 메뉴들을 만나보세요.<br>
+                쌀쌀해진 날씨, 따듯한 아메리카노가 떠오르 날, 달달의 아메키라노를 잊지 말아주세요
+              </p>
+              <button class="primary_btn">알아보기</button>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
     </div>
     <!-- about us -->
     <section class="main_intro">
       <img src="images/section2.jpg" class="left" alt="">
       <div class="right">
         <div class="right_content">
-          <span>달달커피이야기</span>
-          <h2>작은 곳에서 시작한 달달커피</h2>
+          <div class="heading">
+            <span>달달커피이야기</span>
+            <h2>작은 곳에서 시작한 달달커피</h2>
+          </div>
           <p>모든 국민은 근로의 권리를 가진다.적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.</p>
           <br>
           <p>서한으로 의견을 표시할 수 있다. 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.</p>
         </div>
-        <button class="primary_btn">알아보기</button>
+        <button class="primary_btn ani_btn">알아보기</button>
       </div>
     </section>
     <section class="main_ablity">
       <div class="item">
         <i class="item_icon xi-star-o"></i>
-        <h2>코스타리카산 원두</h2>
-        <p>
+        <h2 class="">코스타리카산 원두</h2>
+        <p class="">
           국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다
         </p>
       </div>
       <div class="item">
         <i class="item_icon xi-emoticon-smiley-o"></i>
-        <h2>당일 볶은 원두</h2>
-        <p>
+        <h2 class="">당일 볶은 원두</h2>
+        <p class="">
           국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다
         </p>
       </div>
       <div class="item">
         <i class="item_icon xi-snooze"></i>
-        <h2>아늑한 인테리어</h2>
-        <p>
+        <h2 class="">아늑한 인테리어</h2>
+        <p class="">
           국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다
         </p>
       </div>
     </section>
     <section class="main_banner">
+      <ul class="box_list">
+        <div class="item">
+          <h3 class="ani_tit">
+            300
+          </h3>
+          <p class="ani_conts">
+            1년만에 전국 300여개의 지점
+          </p>
+        </div>
+        <div class="item">
+          <h3 class="ani_tit">
+            130
+          </h3>
+          <p class="ani_conts">
+            전년도 대비, 130% 수입 증가
+          </p>
+        </div>
+        <div class="item">
+          <h3 class="ani_tit">
+            5%
+          </h3>
+          <p class="ani_conts">
+            6개월 이전 폐점률 5%
+          </p>
+        </div>
+        <div class="item">
+          <h3 class="ani_tit">
+            380
+          </h3>
+          <p class="ani_conts">
+            지점별 평균 380잔 판매
+          </p>
+        </div>
+      </ul>
     </section>
     <section class="new_menus">
-      <span>달달의 새로운 메뉴</span>
-      <h2>신메뉴</h2>
-      <ul class="menu_list">
+      <div class="heading">
+        <span>달달의 새로운 메뉴</span>
+        <h2>신메뉴</h2>
+      </div>
+      <ul class="ani_conts menu_list">
         <li class="menu_list_item">
           <a href="">
             <div class="menu_list_img">
@@ -240,17 +340,17 @@
       <div class="heading">
         <span>달달커피-</span>
         <h2>
-          가맹점 <strong class="ft_right">&</strong><br>
+          가맹점 <strong class="ft_right">&</strong>
           가맹후기
         </h2>
         <p>달달커피와 달달한 하루를<br>시작한 점주분들!<br>
           가맹 <strong>'생생 후기'</strong>와 <br>지점 정보를 알아보세요-
         </p>
       </div>
-      <div class="left">
+      <div class="left ani_conts">
         <i class="xi-heart-o xi-3x"></i>
       </div>
-      <div class="right">
+      <div class="right ani_conts">
         <span>이달의 새로운 매장</span>
         <h2>달달커피 응암점</h2>
         <p>서울특별시 은평구 응암동 90-14번지 1층 4호</p>
@@ -265,6 +365,10 @@
       </div>
     </footer>
   </main>
+
+  <!--  -->
+  <script type="text/javascript">
+  </script>
 </body>
 
 </html>

@@ -31,14 +31,36 @@ $(document).ready(function() {
   });
 
   function menu_scroll_ani(top) {
-   if (main_header_height * 2 < top && main_header.hasClass('active') == false) {
-     main_header.addClass('stiky');
-     isNavTurn = true;
+    if (main_header_height * 2 < top && main_header.hasClass('active') == false) {
+      main_header.addClass('stiky');
+      isNavTurn = true;
 
-   } else if (top * 0.5 < main_header_height || top === 0) {
-     main_header.removeClass('stiky');
-     isNavTurn = false;
-   }
- }
+    } else if (top * 0.5 < main_header_height || top === 0) {
+      main_header.removeClass('stiky');
+      isNavTurn = false;
+    }
+  }
+  // 본문 애니메이션
+  ScrollOut({
+    targets: '.heading span, .heading h2,.ani_tit,#index_page .right_content  p,.ani_btn,.ani_conts'
+  });
+
+  //슬라이더
+  var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 30,
+    effect: 'fade',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
 });

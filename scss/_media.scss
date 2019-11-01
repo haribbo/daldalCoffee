@@ -1,8 +1,24 @@
-body {
-  position: relative;
+@mixin flex_media_col {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@mixin mobile_pd {
+  padding: 0 3%;
 }
 // 타블렛
 @media (max-width:768px) {
+  .header {
+    &_infos {
+      .item {
+        display: none;
+      }
+
+      .item.logo {
+        display: block;
+      }
+    }
+  }
+
   .header_nav {
     position: fixed;
     top: 0;
@@ -13,6 +29,7 @@ body {
     // background: none;
     transform: translate3d(-100%,0,0);
     z-index: 50;
+    transition: transform 0.3s;
 
     ul {
       background: #5352ed;
@@ -34,8 +51,9 @@ body {
         ul {
           top: 0;
           height: auto;
-          width: 0%;
+          width: 0;
           transform: translate3d(0,0,0);
+          transition: transform 0.3s;
 
           &.view {
             width: 100%;
@@ -43,7 +61,6 @@ body {
             visibility: visible;
             transform: translate3d(100%,0,0);
             display: block;
-            transition: all 0.3s;
           }
         }
       }
@@ -91,14 +108,199 @@ body {
   .line_menu:hover {
     background: green;
   }
-  // .line_menu + .header_nav {
-  //   transition: all .3s;
-  //   transform: translate3d(-100%,0,0);
-  // }
-  // .line_menu:hover + .header_nav {
-  //   transform: translate3d(0,0,0);
-  //   ul {
-  //     width: 100%;
-  //   }
 
+  .main_slider_content_inner {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .main_intro {
+    @include flex_media_col;
+    padding: 0 0 3rem;
+
+    .left {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .right {
+      @include mobile_pd;
+      margin-top: 3%;
+    }
+  }
+
+  .main_ablity {
+    width: 100%;
+    @include flex_media_col;
+    padding: 6.2rem 0;
+
+    .item {
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 0 5%;
+
+      &_icon:after {
+        left: 5%;
+      }
+    }
+  }
+
+  .main_banner {
+    height: auto;
+    padding: 6.2rem 0;
+
+    .box_list {
+      height: auto;
+      padding: 2rem 0;
+      @include mobile_pd;
+      @include flex_media_col;
+
+      .item {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .new_menus {}
+
+  .menu_list {
+    justify-content: center;
+
+    li {
+      margin-right: 0;
+      width: 94%;
+    }
+  }
+
+  .main_notice {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2.2rem;
+
+    .more_link {
+      display: none;
+    }
+
+    .heading {
+      width: 100%;
+      text-align: center;
+
+      h2 {
+        width: 100%;
+        display: block;
+
+        &:after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    .left {
+      width: 100%;
+      height: 25vh;
+    }
+
+    .right {
+      padding: 3vh 0;
+      flex: 1;
+    }
+  }
+
+  .cate_list {
+    flex-wrap: wrap;
+
+    li {
+      padding: 0;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  .main_notice.stores {
+    .store_list {
+      &_item {
+        @include flex_media_col;
+
+        .right {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .notice_section {
+    padding: 0;
+    margin: 4.4rem 0;
+  }
+
+  .notice_list {
+    &_row {
+      flex-wrap: wrap;
+
+      span {
+        padding: 0 2.2rem;
+      }
+
+      span:first-child {
+        display: none;
+      }
+
+      span:last-child {
+        display: none;
+      }
+
+      span.num {
+        flex: 0;
+        width: 6%;
+      }
+
+      span.tit {
+        width: 94%;
+      }
+    }
+
+    &_headings {
+      span {}
+    }
+  }
+
+  .card_list {
+    @include flex_media_col;
+    @include mobile_pd;
+
+    &_item {
+      width: 100%;
+    }
+  }
+
+  .contact {
+    .input_row {
+      @include flex_media_col;
+      @include mobile_pd;
+    }
+
+    .input_col {
+      width: 100%;
+      margin-bottom: 2.2rem;
+    }
+  }
+
+  .store_infos {
+    &_item {
+      display: flex;
+      .sub_tit {
+        display: none;
+      }
+    }
+  }
+
+  .heading {
+    @include mobile_pd;
+  }
+  // mobile end
 }

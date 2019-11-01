@@ -1,0 +1,61 @@
+@mixin ani_fadeUp($ani_delay:0s,$is_after:"false") {
+  &[data-scroll="out"] {
+    position: relative;
+    opacity: 0;
+    transform-origin: bottom;
+    transform: translateY(100%);
+  }
+
+  &[data-scroll="in"] {
+    transform: translateY(0);
+    opacity: 1;
+    animation-delay: $ani_delay;
+    transition: 0.4s;
+  }
+  @if($is_after == "true") {
+    &[data-scroll="out"]:after {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    &[data-scroll="in"]:after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.ani_tit,
+.heading span {
+  @include ani_fadeUp;
+}
+
+.heading h2 {
+  @include ani_fadeUp(0.5s,"true");
+}
+
+.ani_btn {
+  @include ani_fadeUp(1s);
+}
+
+.ani_conts {
+  @include ani_fadeUp(1s,"false");
+  animation-duration: 0.8s;
+}
+
+#index_page .right_content p {
+  @include ani_fadeUp(1s);
+}
+
+.ani_conts.menu_list,
+.main_notice .right.ani_conts,
+.main_notice .left.ani_conts  {
+  &[data-scroll="out"] {
+    transform: translateY(0);
+  }
+  &[data-scroll="in"] {
+    transition: 1s;
+  }
+}
+
+// animation: 3s ease-in 1s 2 reverse both paused slidein;

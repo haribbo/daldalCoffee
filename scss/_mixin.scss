@@ -26,7 +26,7 @@
 
   hr {
     border-bottom: 1px solid #fff;
-    width: 100%;
+    width: 30%;
   }
 
   span {
@@ -37,6 +37,10 @@
 .lines {
   @include lines;
 }
+// @mixin bg_gradiAndUrl($gra_bg:colors(primary),$root) {
+//
+// };
+
 @mixin bg_fullColor($bg_color:#333) {
   height: 100%;
   width: 100%;

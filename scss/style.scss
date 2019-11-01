@@ -1,5 +1,6 @@
 @import "base";
 @import "mixin";
+@import 'ani';
 
 * {
   margin: 0;
@@ -7,8 +8,12 @@
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+}
 body {
-  font-family: $ft_main;
+  background: none !important;
+  font-family: $ft_main !important;
 }
 
 body,
@@ -62,9 +67,8 @@ h6 {
 .header {
   &_infos {
     @include innerAuto;
-    display: flex;
     padding: 4rem 0;
-
+    display: flex;
     .item {
       flex: 1;
       display: flex;
@@ -122,19 +126,21 @@ h6 {
   }
 }
 
-
 .header_nav {
   background: colors(primary);
 
   &.stiky {
     position: fixed;
-    top:0;
-    left:0;
+    z-index: 999;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: all .3s;
+    transition: all 0.3s;
     box-shadow: 0 2px 2px rgba(0,0,0,.25);
+
     ul li {
       padding: 1.4rem 0 1.2rem;
+
       a {
         font-size: 1.6rem;
       }
@@ -142,7 +148,7 @@ h6 {
   }
 
   &.stiky.view {
-    position: absolute;
+    position: absolute !important;
   }
 
   ul {
@@ -170,12 +176,13 @@ h6 {
         left: 0;
         bottom: 0;
         width: 100%;
-        opacity: 0;
-        // border: 1px solid rgba(255,255,255,0.05);
-        height: 0;
+        overflow: hidden;
         visibility: hidden;
-
         transition: transform 0.3s;
+        transition: height 0.3s;
+        z-index: 100;
+        height: 0;
+        transform: translate3d(0,150%,0);
 
         li {
           position: relative;
@@ -199,9 +206,8 @@ h6 {
       &:hover ul {
         @include nav_event {
           visibility: visible;
-          opacity: 1;
           transform: translate3d(0,100%,0);
-          height: 100%;
+          height: 96px;
         }
       }
     }
@@ -211,20 +217,18 @@ h6 {
     }
   }
 }
-// main_page
 
-.main_slider {
-  width: 100%;
+.main_slider_content {
+  transition: all .5s;
   height: 100vh;
   color: #fff;
+  background: linghten(color(white),10);
+  text-align: center;
+  @include headings(big);
+  @include flexCenter(column);
   background: linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),url("images/main_slider.jpg")no-repeat center/cover;
-  @include flexCenter;
 
-  &_content {
-    background: linghten(color(white),10);
-    text-align: center;
-    @include headings(big);
-  }
+  &_inner {}
 }
 // main_intro section
 
@@ -292,6 +296,35 @@ h6 {
 .main_banner {
   height: 300px;
   background: colors(primary);
+
+  .box_list {
+    @include innerAuto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    height: 300px;
+    padding: 4rem 0;
+
+    * {
+      color: #fff;
+    }
+
+    .item {
+      text-align: center;
+
+      h3 {
+        font-size: 5rem;
+        font-weight: bolder;
+      }
+
+      p {
+        line-height: 2;
+        font-weight: 300;
+        font-size: 1.6rem;
+      }
+    }
+  }
 }
 
 .new_menus {
@@ -449,7 +482,7 @@ footer {
   padding: 8.8rem 0;
   @include innerAuto;
 
-  .headings {
+  .heading {
     @include headings;
     text-align: center;
     margin-bottom: 3rem;
